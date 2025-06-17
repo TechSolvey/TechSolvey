@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TechSolvey</title>
   <style>
     body {
@@ -22,14 +22,15 @@
     .logo {
       width: 80px;
       height: 80px;
-      background-color: #ccc;
-      border-radius: 50%;
       margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #444;
+    }
+    .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
     }
     nav {
       display: flex;
@@ -59,6 +60,13 @@
       color: #666;
       font-size: 1.2rem;
     }
+    img.responsive-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -69,9 +77,11 @@
 </head>
 <body>
   <header>
-    <div class="logo">Logo</div>
+    <div class="logo">
+      <img src="logo.png" alt="TechSolvey Logo" />
+    </div>
     <h1>TechSolvey</h1>
-    <p>We build websites and logos for businesses</p>
+    <p>We build websites, logos, business plans, proposals, and contracts for businesses</p>
   </header>
   <nav>
     <a href="#home">Home</a>
@@ -80,19 +90,22 @@
   </nav>
 
   <section id="home">
-    <div class="image-space">[Image Placeholder - Home]</div>
+    <img src="home-image.jpg" alt="Home Image" class="responsive-image" />
     <h2>Welcome to TechSolvey</h2>
-    <p>Your go-to partner for professional websites and creative logos. We help businesses make a strong digital impression.</p>
+    <p>Your go-to partner for professional websites, creative logos, business plans, proposals, and contracts. We help businesses make a strong digital and strategic impression.</p>
   </section>
 
   <section id="about">
-    <div class="image-space">[Image Placeholder - About]</div>
+    <img src="about-image.jpg" alt="About Image" class="responsive-image" />
     <h2>About Us</h2>
-    <p>At TechSolvey, we’re passionate about design and development. Our team focuses on delivering tailored websites and distinctive brand identities that reflect your business vision and attract your target audience.</p>
+    <p>
+      At TechSolvey, we’re passionate about design, development, and strategic business solutions.
+      Our team focuses on delivering tailored websites, distinctive brand identities, and comprehensive business plans, proposals, and contracts that reflect your vision and attract your target audience.
+    </p>
   </section>
 
   <section id="contact">
-    <div class="image-space">[Image Placeholder - Contact]</div>
+    <img src="contact-image.jpg" alt="Contact Image" class="responsive-image" />
     <h2>Contact Us</h2>
     <p><strong>Contact Person:</strong> Lenox</p>
     <p><strong>Phone:</strong> 071 394 7475</p>
