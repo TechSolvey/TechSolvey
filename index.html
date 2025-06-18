@@ -61,6 +61,15 @@
       padding: 1rem;
       background-color: #e0d6c4;
       color: #333;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #007acc;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
     /* Accordion styles */
     #services {
@@ -266,6 +275,10 @@
 
   <footer>
     <p>&copy; 2025 TechSolvey. All rights reserved.</p>
+    <p>
+      <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> | 
+      <a href="terms-of-service.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+    </p>
   </footer>
 
   <script>
@@ -277,7 +290,6 @@
         content.classList.remove('open');
         icon.classList.remove('open');
       } else {
-        // Close any open content first if you want only one open at a time
         document.querySelectorAll('.accordion-content.open').forEach(openContent => {
           openContent.classList.remove('open');
           openContent.previousElementSibling.querySelector('.accordion-icon').classList.remove('open');
