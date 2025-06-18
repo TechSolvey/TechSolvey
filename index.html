@@ -107,7 +107,7 @@
       color: #555;
     }
     .accordion-content.open {
-      max-height: 2000px; /* large value to allow expansion */
+      max-height: 2000px;
       margin-bottom: 1rem;
     }
     ul {
@@ -146,13 +146,9 @@
   <section id="about">
     <img src="about-image.jpg" alt="About Image" class="responsive-image" />
     <h2>About Us</h2>
-    <p>
-      At TechSolvey, we’re passionate about design, development, and strategic business solutions.
-      Our team focuses on delivering tailored websites, distinctive brand identities, and comprehensive business plans, proposals, and contracts that reflect your vision and attract your target audience.
-    </p>
+    <p>At TechSolvey, we’re passionate about design, development, and strategic business solutions. Our team focuses on delivering tailored websites, distinctive brand identities, and comprehensive business plans, proposals, and contracts that reflect your vision and attract your target audience.</p>
   </section>
 
-  <!-- Services Accordion Section -->
   <section id="services">
     <h2>SERVICES:</h2>
 
@@ -163,7 +159,6 @@
       </div>
       <div class="accordion-content">
         <p>Professional logo design services to create a unique and memorable brand identity.</p>
-        <p>Services include:</p>
         <ul>
           <li>Custom logo design</li>
           <li>Brand identity development</li>
@@ -185,7 +180,6 @@
         <span>🌐 WEBSITE DEVELOPER</span>
       </div>
       <div class="accordion-content">
-        <p>Expert website development services for businesses and individuals. Services include:</p>
         <ul>
           <li>Custom website design and development</li>
           <li>Responsive and mobile-friendly layouts</li>
@@ -228,11 +222,8 @@
       </div>
       <div class="accordion-content">
         <p>Unlock Your Business Potential with Our Expert Services!</p>
-        <p>We're excited to offer two powerful services to help you achieve your business goals:</p>
         <ol>
-          <li>
-            <strong>Tailored Business Plan</strong><br />
-            Get a customized roadmap for success! Our expert team will work with you to create a comprehensive business plan that outlines:
+          <li><strong>Tailored Business Plan</strong>
             <ul>
               <li>Your business's mission, vision, and objectives</li>
               <li>Market analysis and competitive landscape</li>
@@ -240,9 +231,7 @@
               <li>Financial projections and budgeting</li>
             </ul>
           </li>
-          <li>
-            <strong>Business Proposal</strong><br />
-            Make a lasting impression with a compelling proposal! Our team will craft a persuasive document that showcases:
+          <li><strong>Business Proposal</strong>
             <ul>
               <li>Your business idea or project</li>
               <li>Market opportunity and potential</li>
@@ -266,7 +255,22 @@
 
   <footer>
     <p>&copy; 2025 TechSolvey. All rights reserved.</p>
+    <p>
+      <strong>Policy:</strong> By using this website, you agree to our
+      <a href="#privacy-policy" style="color:#333; text-decoration: underline;">Privacy Policy</a> and
+      <a href="#terms-of-service" style="color:#333; text-decoration: underline;">Terms of Service</a>.
+    </p>
   </footer>
+
+  <section id="privacy-policy" style="padding: 2rem; background-color: #f7f7f7; color: #333;">
+    <h2>Privacy Policy</h2>
+    <p>We respect your privacy. Any information submitted through this website will be used only for communication and services requested. We do not share your data with third parties.</p>
+  </section>
+
+  <section id="terms-of-service" style="padding: 2rem; background-color: #f7f7f7; color: #333;">
+    <h2>Terms of Service</h2>
+    <p>By using TechSolvey’s services, you agree not to misuse this website or its content. All services are subject to a mutual agreement outlined before any project begins.</p>
+  </section>
 
   <script>
     function toggleAccordion(header) {
@@ -277,7 +281,6 @@
         content.classList.remove('open');
         icon.classList.remove('open');
       } else {
-        // Close any open content first if you want only one open at a time
         document.querySelectorAll('.accordion-content.open').forEach(openContent => {
           openContent.classList.remove('open');
           openContent.previousElementSibling.querySelector('.accordion-icon').classList.remove('open');
