@@ -13,7 +13,7 @@
       color: #333;
     }
     header {
-      background-color: #e0d6c4; /* Soft Beige */
+      background-color: #e0d6c4;
       color: #222;
       padding: 2rem 1rem 1rem;
       text-align: center;
@@ -35,7 +35,7 @@
     nav {
       display: flex;
       justify-content: center;
-      background-color: #6e6e6e; /* Muted Grey */
+      background-color: #6e6e6e;
     }
     nav a {
       color: #fff;
@@ -62,45 +62,63 @@
       background-color: #e0d6c4;
       color: #333;
     }
-    /* Services Section */
+    /* Accordion styles */
     #services {
-      background-color: #e9e6de;
-      border-radius: 8px;
-      margin-top: 1rem;
-      padding: 1rem 2rem;
       max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 1rem auto;
+      background: #e9e6de;
+      border-radius: 8px;
+      padding: 1rem 2rem;
     }
     #services h2 {
       margin-top: 0;
       color: #444;
+      cursor: default;
     }
-    .service-item {
-      margin-bottom: 1.8rem;
+    .accordion-item {
+      border-top: 1px solid #ccc;
     }
-    .service-icon {
-      font-size: 1.5rem;
-      margin-right: 0.5rem;
-      vertical-align: middle;
-    }
-    .service-title {
+    .accordion-header {
       font-weight: 700;
       font-size: 1.2rem;
-      margin-bottom: 0.3rem;
+      padding: 0.8rem 0;
       display: flex;
       align-items: center;
+      cursor: pointer;
+      user-select: none;
       gap: 0.5rem;
     }
-    .service-description {
-      margin-left: 2rem;
-      margin-bottom: 0.3rem;
+    .accordion-header:hover {
+      color: #000;
+    }
+    .accordion-icon {
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+    .accordion-icon.open {
+      transform: rotate(90deg);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-left: 2rem;
       color: #555;
     }
-    .service-list {
-      margin-left: 2.5rem;
-      color: #555;
+    .accordion-content.open {
+      max-height: 2000px; /* large value to allow expansion */
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-top: 0.3rem;
+      margin-bottom: 0.8rem;
       list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+    .highlight {
+      font-weight: 600;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
@@ -134,71 +152,106 @@
     </p>
   </section>
 
-  <!-- Services Section -->
+  <!-- Services Accordion Section -->
   <section id="services">
-    <h2>SERVICE:</h2>
+    <h2>SERVICES:</h2>
 
-    <div class="service-item">
-      <div class="service-title">
-        <span class="service-icon">🎨</span> LOGO DESIGN
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>🎨 LOGO DESIGN</span>
       </div>
-      <div class="service-description">
-        Professional logo design services to create a unique and memorable brand identity.
-      </div>
-      <ul class="service-list">
-        <li>Custom logo design</li>
-        <li>Brand identity development</li>
-        <li>Multiple design concepts</li>
-        <li>Revisions and refinements</li>
-        <li>You can get in (e.g., PNG, JPEG, SVG, EPS)</li>
-      </ul>
-      <div class="service-description" style="font-weight:bold; margin-left: 2rem;">
-        - ATTRACT MORE CLIENTS<br />
-        - STAND OUT FROM YOUR COMPETITORS<br />
-        - ENSURE YOU ARE REMARKABLE AND REMEMBERED
+      <div class="accordion-content">
+        <p>Professional logo design services to create a unique and memorable brand identity.</p>
+        <p>Services include:</p>
+        <ul>
+          <li>Custom logo design</li>
+          <li>Brand identity development</li>
+          <li>Multiple design concepts</li>
+          <li>Revisions and refinements</li>
+          <li>You can get it in PNG, JPEG, SVG, EPS formats</li>
+        </ul>
+        <p class="highlight">
+          - ATTRACT MORE CLIENTS<br />
+          - STAND OUT FROM YOUR COMPETITORS<br />
+          - ENSURE YOU ARE REMARKABLE AND REMEMBERED
+        </p>
       </div>
     </div>
 
-    <div class="service-item">
-      <div class="service-title">
-        <span class="service-icon">🌐</span> WEBSITE DEVELOPER
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>🌐 WEBSITE DEVELOPER</span>
       </div>
-      <div class="service-description">
-        Expert website development services for businesses and individuals. Services include:
-      </div>
-      <ul class="service-list">
-        <li>Custom website design and development</li>
-        <li>Responsive and mobile-friendly layouts</li>
-        <li>Content management systems (CMS)</li>
-        <li>E-commerce solutions</li>
-        <li>Website maintenance and updates</li>
-        <li>Search engine optimization (SEO)</li>
-      </ul>
-    </div>
-
-    <div class="service-item">
-      <div class="service-title">
-        <span class="service-icon">⚖️</span> CONTRACT ADMINISTRATION AND LEGAL SERVICES
-      </div>
-      <ul class="service-list" style="margin-left: 2rem;">
-        <li>Contract Administration</li>
-        <li>Contract Vetting & Review</li>
-        <li>In accordance with the Law of Contract</li>
-      </ul>
-    </div>
-
-    <div class="service-item">
-      <div class="service-title">
-        <span class="service-icon">🏢</span> COMPANY REGISTRATION BBEE PACKAGE
-      </div>
-      <div class="service-description" style="margin-left: 2rem;">
-        Company registration with CIPC and BEE Certificate Package
+      <div class="accordion-content">
+        <p>Expert website development services for businesses and individuals. Services include:</p>
+        <ul>
+          <li>Custom website design and development</li>
+          <li>Responsive and mobile-friendly layouts</li>
+          <li>Content management systems (CMS)</li>
+          <li>E-commerce solutions</li>
+          <li>Website maintenance and updates</li>
+          <li>Search engine optimization (SEO)</li>
+        </ul>
       </div>
     </div>
 
-    <div class="service-item">
-      <div class="service-title">
-        <span class="service-icon">📋</span> TAILORED BUSINESS PLAN & BUSINESS PROPOSAL
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>⚖️ CONTRACT ADMINISTRATION AND LEGAL SERVICES</span>
+      </div>
+      <div class="accordion-content">
+        <ul>
+          <li>Contract Administration</li>
+          <li>Contract Vetting & Review</li>
+          <li>In accordance with the Law of Contract</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>🏢 COMPANY REGISTRATION BEE PACKAGE</span>
+      </div>
+      <div class="accordion-content">
+        <p>Company registration with CIPC and BEE Certificate Package</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>📋 TAILORED BUSINESS PLAN & BUSINESS PROPOSAL</span>
+      </div>
+      <div class="accordion-content">
+        <p>Unlock Your Business Potential with Our Expert Services!</p>
+        <p>We're excited to offer two powerful services to help you achieve your business goals:</p>
+        <ol>
+          <li>
+            <strong>Tailored Business Plan</strong><br />
+            Get a customized roadmap for success! Our expert team will work with you to create a comprehensive business plan that outlines:
+            <ul>
+              <li>Your business's mission, vision, and objectives</li>
+              <li>Market analysis and competitive landscape</li>
+              <li>Strategies for growth and development</li>
+              <li>Financial projections and budgeting</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Business Proposal</strong><br />
+            Make a lasting impression with a compelling proposal! Our team will craft a persuasive document that showcases:
+            <ul>
+              <li>Your business idea or project</li>
+              <li>Market opportunity and potential</li>
+              <li>Unique value proposition</li>
+              <li>Implementation plan and timeline</li>
+              <li>Budget and financial projections</li>
+            </ul>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
@@ -214,5 +267,25 @@
   <footer>
     <p>&copy; 2025 TechSolvey. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.accordion-icon');
+
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        icon.classList.remove('open');
+      } else {
+        // Close any open content first if you want only one open at a time
+        document.querySelectorAll('.accordion-content.open').forEach(openContent => {
+          openContent.classList.remove('open');
+          openContent.previousElementSibling.querySelector('.accordion-icon').classList.remove('open');
+        });
+        content.classList.add('open');
+        icon.classList.add('open');
+      }
+    }
+  </script>
 </body>
 </html>
