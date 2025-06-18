@@ -62,10 +62,6 @@
       background-color: #e0d6c4;
       color: #333;
     }
-    footer a {
-      color: #333;
-      text-decoration: underline;
-    }
     /* Accordion styles */
     #services {
       max-width: 700px;
@@ -139,7 +135,6 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
-    <a href="#policy">Policy</a>
   </nav>
 
   <section id="home">
@@ -157,7 +152,109 @@
     </p>
   </section>
 
-  <!-- Services section omitted for brevity -->
+  <!-- Services Accordion Section -->
+  <section id="services">
+    <h2>SERVICES:</h2>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>🎨 LOGO DESIGN</span>
+      </div>
+      <div class="accordion-content">
+        <p>Professional logo design services to create a unique and memorable brand identity.</p>
+        <p>Services include:</p>
+        <ul>
+          <li>Custom logo design</li>
+          <li>Brand identity development</li>
+          <li>Multiple design concepts</li>
+          <li>Revisions and refinements</li>
+          <li>You can get it in PNG, JPEG, SVG, EPS formats</li>
+        </ul>
+        <p class="highlight">
+          - ATTRACT MORE CLIENTS<br />
+          - STAND OUT FROM YOUR COMPETITORS<br />
+          - ENSURE YOU ARE REMARKABLE AND REMEMBERED
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>🌐 WEBSITE DEVELOPER</span>
+      </div>
+      <div class="accordion-content">
+        <p>Expert website development services for businesses and individuals. Services include:</p>
+        <ul>
+          <li>Custom website design and development</li>
+          <li>Responsive and mobile-friendly layouts</li>
+          <li>Content management systems (CMS)</li>
+          <li>E-commerce solutions</li>
+          <li>Website maintenance and updates</li>
+          <li>Search engine optimization (SEO)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>⚖️ CONTRACT ADMINISTRATION AND LEGAL SERVICES</span>
+      </div>
+      <div class="accordion-content">
+        <ul>
+          <li>Contract Administration</li>
+          <li>Contract Vetting & Review</li>
+          <li>In accordance with the Law of Contract</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>🏢 COMPANY REGISTRATION BEE PACKAGE</span>
+      </div>
+      <div class="accordion-content">
+        <p>Company registration with CIPC and BEE Certificate Package</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <span class="accordion-icon">▶</span>
+        <span>📋 TAILORED BUSINESS PLAN & BUSINESS PROPOSAL</span>
+      </div>
+      <div class="accordion-content">
+        <p>Unlock Your Business Potential with Our Expert Services!</p>
+        <p>We're excited to offer two powerful services to help you achieve your business goals:</p>
+        <ol>
+          <li>
+            <strong>Tailored Business Plan</strong><br />
+            Get a customized roadmap for success! Our expert team will work with you to create a comprehensive business plan that outlines:
+            <ul>
+              <li>Your business's mission, vision, and objectives</li>
+              <li>Market analysis and competitive landscape</li>
+              <li>Strategies for growth and development</li>
+              <li>Financial projections and budgeting</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Business Proposal</strong><br />
+            Make a lasting impression with a compelling proposal! Our team will craft a persuasive document that showcases:
+            <ul>
+              <li>Your business idea or project</li>
+              <li>Market opportunity and potential</li>
+              <li>Unique value proposition</li>
+              <li>Implementation plan and timeline</li>
+              <li>Budget and financial projections</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
   <section id="contact">
     <img src="contact-image.jpg" alt="Contact Image" class="responsive-image" />
@@ -167,25 +264,8 @@
     <p><strong>Email:</strong> <a href="mailto:lenoxsphuxolo@gmail.com">lenoxsphuxolo@gmail.com</a></p>
   </section>
 
-  <section id="policy">
-    <h2>Company Policy & Terms of Service</h2>
-    <h3>Privacy Policy</h3>
-    <p>We are committed to protecting your personal information. Any information collected through this website will be used solely for the purposes of communication and service provision. Your data will not be sold, shared, or disclosed without your consent.</p>
-
-    <h3>Terms of Service</h3>
-    <p>By using our services, you agree to the following terms:</p>
-    <ul>
-      <li>All work, including logos, websites, and documents, remains the intellectual property of TechSolvey until full payment is received.</li>
-      <li>Clients are responsible for providing accurate and timely information for project execution.</li>
-      <li>Payment terms must be honored as agreed upon during the project initiation phase.</li>
-      <li>Revisions are limited as per service package details; extra changes may incur additional charges.</li>
-      <li>TechSolvey is not liable for any data loss or business interruption resulting from client-side hosting issues or third-party service disruptions.</li>
-    </ul>
-    <p>For more details, contact us directly.</p>
-  </section>
-
   <footer>
-    <p>&copy; 2025 TechSolvey. All rights reserved. | <a href="#policy">Policy & Terms of Service</a></p>
+    <p>&copy; 2025 TechSolvey. All rights reserved.</p>
   </footer>
 
   <script>
@@ -197,6 +277,7 @@
         content.classList.remove('open');
         icon.classList.remove('open');
       } else {
+        // Close any open content first if you want only one open at a time
         document.querySelectorAll('.accordion-content.open').forEach(openContent => {
           openContent.classList.remove('open');
           openContent.previousElementSibling.querySelector('.accordion-icon').classList.remove('open');
